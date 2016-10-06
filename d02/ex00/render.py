@@ -14,9 +14,15 @@ def render():
     if li[len(li)-1] != "template":
         raise Exception("not the right extension")
 
+
+    wfile = sys.argv[1].replace('.template', '.html')
+    print(wfile)
+
+    fd = open(wfile,'w')
+
     with open(sys.argv[1], 'r') as f:
         for line in f :
-            print(line.format(name = settings.name))
+            fd.write(line.format(name = settings.name))
 
 
 if __name__ == '__main__':
