@@ -25,9 +25,7 @@ def render():
             fd.write(line.format(name = settings.name,
             surname = settings.surname, age=settings.age,
             work=settings.work))
-            #fd.write(line.format(surname = settings.name))
-            #fd.write(line.format(age = settings.name))
-            #fd.write(line.format(work = settings.name))
+            
 
 if __name__ == '__main__':
     try :
