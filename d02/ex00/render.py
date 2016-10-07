@@ -6,8 +6,13 @@ import sys
 def render():
 
 
-    if len(sys.argv) != 2:
-        raise Exception("there aren't any file here")
+    #if len(sys.argv) != 2:
+    #    raise Exception("there aren't any file here")
+
+    try :
+        len(sys.argv) == 2
+    except Exception as e_argv:
+        print(e_argv)
 
     li = sys.argv[1].split('.')
     #print(li)
@@ -25,7 +30,7 @@ def render():
             fd.write(line.format(name = settings.name,
             surname = settings.surname, age=settings.age,
             work=settings.work))
-            
+
 
 if __name__ == '__main__':
     try :
