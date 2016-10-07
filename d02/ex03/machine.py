@@ -4,39 +4,42 @@ class CoffeeMachine:
 
     def __init__(self):
         self.name = "a machine !!!"
+        self.count = 0
 
     def __str__(self):
         return("I'm " + self.name)
 
-    class BrokenMachineException(Exception):#comment on construit une exception??
-        message == "This machine as not be repaired"
+    class EmptyCup(beverages.HotBeverage):
+        def __str__(self):
+            self.name = "empty cup"
+            self.prix = "0.90"
+            return(self.name)
+
+        def description(self):
+            return("An empty cup? Gimme my money back!")
+
+
+
+    class BrokenMachineException(Exception):
+        def __init__(self):
+            super().__init__("This machine has not be repaired")
+
 
     def repair(self):
-        pass
-        #comment remettre le compteur de la machine a 0?
+        self.count = 0
 
-    def serve(Coffee):
-        #comment gerer le cas de l'obsolescence?
-        #comment faire un retour une fois sur deux/
-        t++
-        return(Coffee())
+    def serve(self, beverage):
+        if self.count > 10:
+            raise self.BrokenMachineException()
+        self.count += 1
+
+        #comment faire un retour une fois sur deux/ utiliser la fonction random
+
+        return(beverage)#parce passe en instance dans le main
         #or
-        #return(EmptyCup())
-        if
+        #return(self.EmptyCup())# parce que pas instancie dans le main instancie ici
+        if:
         #bloc de service
-        raise BrokenMachineException as b:
-            "This machine need a reparation"
-
-
-class EmptyCup(beverages.HotBeverage):
-    def __str__(self):
-        self.name = "empty cup"
-        self.prix = "0.90"
-        return(self.name)
-
-    def description(self):
-        return("An empty cup? Gimme my money back!")
-
 
 
 
@@ -44,6 +47,12 @@ class EmptyCup(beverages.HotBeverage):
 
 if __name__ == '__main__':
     test = CoffeeMachine()
-    cup = EmptyCup()# place le nom au bon endroit
+    cup = CoffeeMachine.EmptyCup()# place le nom au bon endroit
     print(test)
     print(cup)
+    print(cup.description())
+    try :
+        test.serve(beverages.Coffee())#() parce que instance !!
+    except CoffeeMachine.BrokenMachineException as e:
+        print (e)
+        test.repair()
