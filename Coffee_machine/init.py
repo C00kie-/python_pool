@@ -6,17 +6,22 @@ from tkinter import *
 
 fenetre = Tk()
 
+cadre = Frame(fenetre, width=768, height=576, borderwidth=2)
+
+cadre.pack(fill=BOTH)
+
 champ_label = Label(fenetre, pady=12, bg="#800000", text="Hello, I'm Albert, your coffee machine today")
 
 button_ok = Button(fenetre, text="Clic me", command=fenetre.quit)
 
 v = StringVar() #a completer avec ligne de saisie, via le champ Entry
 
+
 e = Entry(fenetre, textvariable=v)
 
 v.set("a default value")
 
-s = v.get()
+#s = v.get()
 
 
 
@@ -24,6 +29,8 @@ ligneText = Entry(fenetre, textvariable=v, width=50)
 
 
 if __name__ == '__main__':
+
+
 
     champ_label.pack()
 
