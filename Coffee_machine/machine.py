@@ -18,7 +18,7 @@ message.pack(side="top")
 #a.pack()
 
 def callback():
-    maintenance.manufacturer()
+    maintenance.manufacturer(fenetre)
     return("ok")
 
 b = Button(cadre, text="ain't working, please fix the bug", command=callback)
