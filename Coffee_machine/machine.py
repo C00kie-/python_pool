@@ -43,9 +43,9 @@ liste.insert(END, "Chocolate")
 liste.insert(END, "Milk")
 
 
-
 if __name__ == '__main__':
     fenetre.mainloop()
+    print("reload the coffee machine please")
     fenetre.destroy()
 
     #une commande pour terminer le programme auto
