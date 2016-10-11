@@ -24,7 +24,8 @@ def callback():
 b = Button(cadre, text="ain't working, please fix the bug", command=callback)
 b.pack()
 
-
+c = Button(cadre, text="no thanks, I'm already full of cafein", command=cadre.quit)
+c.pack()
 
 #liste des boissons
 

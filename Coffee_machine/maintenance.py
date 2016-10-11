@@ -5,15 +5,19 @@ import beverages
 
 manu = Tk()
 
-cadre = Frame(manu, width=768, height=576, borderwidth=1)
-#cadre.pack(fill=BOTH)
+cadre = Frame(manu)
+cadre.pack()
 
 text = Label(cadre, text="Hello I'm the guy who fill the machine with beverages")
 
+
+
 def manufacturer():
     print("Hello I'm the guy who fill the machine with beverages")
-    text.pack()
+    text.pack(fill=BOTH, side="top")
 
+    b = Button(cadre, text="click here", command=cadre.quit)
+    b.pack()
 
 if __name__ == '__main__':
     manufacturer()
