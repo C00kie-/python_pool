@@ -19,7 +19,7 @@ v = StringVar() #a completer avec ligne de saisie, via le champ Entry
 
 e = Entry(fenetre, textvariable=v)
 
-v.set("a default value")
+v.set("a default value") #http://effbot.org/tkinterbook/variable.htm
 
 #s = v.get()
 
